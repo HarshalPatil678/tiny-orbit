@@ -34,6 +34,10 @@ Create a repository, add the files in this folder, then open **Settings → Page
 
 The app uses plain HTML, CSS, and JavaScript so it can be opened without installing anything. Google Fonts add the type treatment; if they are unavailable, the page falls back to system fonts. There are no third-party scripts.
 
+## Another small tool
+
+[Pocket Pantry](./pocket-pantry/) is a browser-only list for keeping an eye on the ingredients you already have. It sorts items by date and saves them only in the current browser.
+
 ## License
 
 MIT. See [`LICENSE`](./LICENSE).
