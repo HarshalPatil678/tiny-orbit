@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f5ef">
+  <meta name="description" content="A small, private pantry list that helps you use what you already have.">
+  <title>Pocket Pantry — use what you have</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="page">
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="Pocket Pantry home"><span class="brand-icon">✳</span> pocket pantry</a>
+      <span class="privacy"><span class="privacy-dot"></span> Just on this device</span>
+    </header>
+
+    <section class="intro" id="top">
+      <div class="intro-copy">
+        <p class="kicker">A LITTLE LESS FOOD WASTED</p>
+        <h1>Use what<br><em>you have.</em></h1>
+        <p class="lede">Keep a gentle eye on what’s in the cupboard. Add a date when you know it; skip it when you don’t.</p>
+      </div>
+      <div class="still-life" aria-hidden="true"><span class="sun"></span><span class="jar jar-one"><i>OATS</i></span><span class="jar jar-two"><i>BEANS</i></span><span class="leaf leaf-one"></span><span class="leaf leaf-two"></span><span class="table"></span></div>
+    </section>
+
+    <section class="summary" aria-label="Pantry overview">
+      <div><span class="summary-label">IN YOUR PANTRY</span><strong id="item-count">0</strong><span class="summary-note">things to keep track of</span></div>
+      <div class="summary-divider"></div>
+      <div><span class="summary-label">USE SOON</span><strong id="soon-count">0</strong><span class="summary-note">within the next 3 days</span></div>
+      <p class="summary-aside">A quick list beats a perfect inventory.<br>Start with whatever comes to mind.</p>
+    </section>
+
+    <section class="pantry panel">
+      <div class="section-heading"><div><p class="kicker">THE CUPBOARD LIST</p><h2>What’s around</h2></div><button class="quiet-button" id="clear-all" type="button">Clear list</button></div>
+      <form class="add-form" id="item-form">
+        <label class="field item-field"><span>ITEM</span><input id="item-name" name="name" maxlength="50" placeholder="e.g. chickpeas" autocomplete="off" required></label>
+        <label class="field"><span>AMOUNT <small>optional</small></span><input id="item-amount" name="amount" maxlength="24" placeholder="1 tin"></label>
+        <label class="field"><span>BEST BY <small>optional</small></span><input id="item-date" name="date" type="date"></label>
+        <button class="add-button" type="submit"><span>＋</span> Add item</button>
+      </form>
+      <div class="list-toolbar"><div class="filters" role="group" aria-label="Filter pantry items"><button class="filter active" type="button" data-filter="all">Everything <span id="all-count">0</span></button><button class="filter" type="button" data-filter="soon">Use soon <span id="filter-soon-count">0</span></button><button class="filter" type="button" data-filter="dated">Has a date</button></div><label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Find an item" aria-label="Find an item"></label></div>
+      <div class="item-list" id="item-list" aria-live="polite"></div>
+      <div class="empty" id="empty-state"><span class="empty-mark">✳</span><strong>Nothing on the list yet.</strong><p>Add one thing you already have. You can fill this in as you go.</p></div>
+      <p class="storage-note"><span>↳</span> Your list is saved in this browser. It doesn’t sync or leave your device.</p>
+    </section>
+    <footer><span>Made for the ingredients already at home.</span><span>Small lists are enough.</span></footer>
+  </main>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
+
